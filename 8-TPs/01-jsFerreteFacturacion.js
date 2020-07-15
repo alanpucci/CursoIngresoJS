@@ -8,25 +8,77 @@ C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 
 function Sumar () 
 {
-    let precioUno = parseInt(txtIdPrecioUno.value);
-    let precioDos = parseInt(txtIdPrecioDos.value);
-    let precioTres = parseInt(txtIdPrecioTres.value);
-    let suma = precioUno + precioDos + precioTres;
-    alert(`La suma de los productos es ${suma}`);
+    //Declaracion de variables
+    var precioUno;
+    var precioDos;
+    var precioTres;
+    var suma;
+
+    //Inicializacion de variables
+    precioUno = txtIdPrecioUno.value;
+    precioDos = txtIdPrecioDos.value;
+    precioTres = txtIdPrecioTres.value;
+
+    //Parseo
+    precioUno = parseInt(precioUno);
+    precioDos = parseInt(precioDos);
+    precioTres = parseInt(precioTres);
+
+    //Suma
+    suma = precioUno + precioDos + precioTres;
+
+    //Mensaje en pantalla
+    alert('La suma de los tres productos es: ' + suma);
 }
 function Promedio () 
 {
-    let precioUno = parseInt(txtIdPrecioUno.value);
-    let precioDos = parseInt(txtIdPrecioDos.value);
-    let precioTres = parseInt(txtIdPrecioTres.value);
-    let promedio = (precioUno + precioDos + precioTres) / 3;
-    alert(`El promedio de los productos es ${promedio}`);
+    //Declaracion de variables
+    var precioUno;
+    var precioDos;
+    var precioTres;
+    var promedio;
+
+    //Inicializacion de variables
+    precioUno = txtIdPrecioUno.value;
+    precioDos = txtIdPrecioDos.value;
+    precioTres = txtIdPrecioTres.value;
+
+    //Parseo
+    precioUno = parseInt(precioUno);
+    precioDos = parseInt(precioDos);
+    precioTres = parseInt(precioTres);
+
+    //Promedio de los productos
+    promedio = (precioUno + precioDos + precioTres) / 3;
+
+    //Mensaje en pantalla
+    alert('El promedio de los tres productos es: ' + promedio);
+
 }
 function PrecioFinal () 
 {
-    let precioUno = parseInt(txtIdPrecioUno.value);
-    let precioDos = parseInt(txtIdPrecioDos.value);
-    let precioTres = parseInt(txtIdPrecioTres.value);
-    let precioFinal = (precioUno + precioDos + precioTres) * 1.21;
-    alert(`El precio final es ${precioFinal}`);
+    //Declaracion de variables
+    var precioUno;
+    var precioDos;
+    var precioTres;
+    var precioConIva;
+
+    //Inicializacion de variables
+    precioUno = txtIdPrecioUno.value;
+    precioDos = txtIdPrecioDos.value;
+    precioTres = txtIdPrecioTres.value;
+
+    //Parseo
+    precioUno = parseInt(precioUno);
+    precioDos = parseInt(precioDos);
+    precioTres = parseInt(precioTres);
+
+    //Precio con IVA
+    precioConIva = (precioUno + precioDos + precioTres) * 1.21;
+
+    precioConIva = precioConIva;
+
+    //Mensaje en pantalla
+    alert('El precio final de los tres productos con el IVA incluido es: ' + precioConIva);
+
 }

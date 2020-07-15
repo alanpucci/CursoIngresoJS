@@ -5,23 +5,71 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 */
 
 function Rectangulo() {
-  let largo = parseInt(txtIdLargo.value);
-  let ancho = parseInt(txtIdAncho.value);
-  let ecuacion = largo * ancho * 3;
-  alert(`El alambre que se necesita es ${ecuacion}`);
+
+    //Declaracion de variables
+    var largo;
+    var ancho;
+    var area;
+    var cantidadAlambre
+
+    //Inicializacion de variables
+    largo = txtIdLargo.value;
+    ancho = txtIdAncho.value;
+
+    //Parseo de variables
+    largo = parseInt(largo);
+    ancho = parseInt(ancho);
+
+    //Calculo del area y alambre
+    area = (largo*ancho);
+    cantidadAlambre = area * 3;
+    
+    //Mensaje en pantalla
+    alert(`Para ${area}mts de terreno, necesitamos ${cantidadAlambre}mts de alambre`);
 }
+
 function Circulo() {
-  let radio = parseInt(txtIdRadio.value);
-  let ecuacion = Math.round(Math.PI * radio * 3);
-  alert(`El alambre que se necesita es ${ecuacion}`);
+
+    //Declaracion de variables
+    var radio;
+    var area;
+    var cantidadAlambre;
+
+    //Inicializacion de variables
+    radio = txtIdRadio.value;
+
+    //Parseo
+    radio = parseInt(radio);
+
+    //Calculo del terreno y alambre
+    area = (Math.PI * radio).toFixed(2);
+    cantidadAlambre = (area * 3).toFixed(2);
+
+    //Mensaje en pantalla
+    alert(`Para ${area}mts de terreno circular, necesitamos ${cantidadAlambre}mts de alambre`);
+
 }
 function Materiales() {
-  let largo = parseInt(txtIdLargo.value);
-  let ancho = parseInt(txtIdAncho.value);
-  let area = largo * ancho;
-  let cemento = area * 2;
-  let cal = area * 3;
-  alert(
-    `Para un area de ${area} mts se necesitan ${cemento} bolsas de cemento y ${cal} bolsas de cal`
-  );
+
+    //Declaracion de variables
+    var largo;
+    var ancho;
+    var area;
+    var cemento;
+    var cal;
+
+    //Inicializacion de variables
+    largo = txtIdLargo.value;
+    ancho = txtIdAncho.value;
+    
+    //Calculo de area
+    area = largo * ancho;
+
+    //Calculo de bolsas de cemento y cal
+    cemento = area * 2;
+    cal = area * 3;
+
+    //Mensaje en pantalla
+    alert(`Para un terreno rectangular de ${area}mts necesitamos: ${cemento} bolsas de cemento y ${cal} bolsas de cal`);
+
 }
