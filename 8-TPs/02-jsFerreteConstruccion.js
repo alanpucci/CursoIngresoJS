@@ -41,6 +41,10 @@ function Circulo() {
     //Parseo
     radio = parseInt(radio);
 
+    //Radio al cuadrado
+    //radio = Math.pow(radio,2);
+    radio = radio*radio;
+
     //Calculo del terreno y alambre
     area = (Math.PI * radio).toFixed(2);
     cantidadAlambre = (area * 3).toFixed(2);
