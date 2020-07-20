@@ -9,7 +9,7 @@ function Rectangulo() {
     //Declaracion de variables
     var largo;
     var ancho;
-    var area;
+    var perimetro;
     var cantidadAlambre
 
     //Inicializacion de variables
@@ -21,11 +21,11 @@ function Rectangulo() {
     ancho = parseInt(ancho);
 
     //Calculo del area y alambre
-    area = (largo*ancho);
-    cantidadAlambre = area * 3;
+    perimetro = (largo + ancho) * 2;
+    cantidadAlambre = perimetro * 3;
     
     //Mensaje en pantalla
-    alert(`Para ${area}mts de terreno, necesitamos ${cantidadAlambre}mts de alambre`);
+    alert(`Para ${perimetro}mts de terreno, necesitamos ${cantidadAlambre}mts de alambre`);
 }
 
 function Circulo() {
@@ -41,12 +41,8 @@ function Circulo() {
     //Parseo
     radio = parseInt(radio);
 
-    //Radio al cuadrado
-    //radio = Math.pow(radio,2);
-    radio = radio*radio;
-
     //Calculo del terreno y alambre
-    area = (Math.PI * radio).toFixed(2);
+    area = (Math.PI * radio * 2).toFixed(2);
     cantidadAlambre = (area * 3).toFixed(2);
 
     //Mensaje en pantalla
@@ -58,22 +54,26 @@ function Materiales() {
     //Declaracion de variables
     var largo;
     var ancho;
-    var area;
+    var perimetro;
     var cemento;
     var cal;
 
     //Inicializacion de variables
     largo = txtIdLargo.value;
     ancho = txtIdAncho.value;
+
+    //Parseo
+    largo = parseInt(largo);
+    ancho = parseInt(ancho);
     
-    //Calculo de area
-    area = largo * ancho;
+    //Calculo de perimetro
+    perimetro = (largo + ancho) * 2;
 
     //Calculo de bolsas de cemento y cal
-    cemento = area * 2;
-    cal = area * 3;
+    cemento = perimetro * 2;
+    cal = perimetro * 3;
 
     //Mensaje en pantalla
-    alert(`Para un terreno rectangular de ${area}mts necesitamos: ${cemento} bolsas de cemento y ${cal} bolsas de cal`);
+    alert(`Para un terreno rectangular de ${perimetro}mts necesitamos: ${cemento} bolsas de cemento y ${cal} bolsas de cal`);
 
 }

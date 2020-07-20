@@ -1,13 +1,23 @@
+/* Al ingresar una edad menor a 18 años y un estado civil distinto
+ a "Soltero", mostrar el siguiente mensaje: 'Es muy pequeño para NO ser soltero.'*/ 
+
 function mostrar()
 {
-	//tomo la edad  
-	let edad = txtIdEdad.value;
-	let opcion = document.getElementById('estadoCivil');
-	let selected = opcion.options[opcion.selectedIndex].text;
-	
-	if(edad < 13 && selected != "Soltero"){
+	//Declaracion de variable
+	var edad;
+	var opcion;
+	var seleccion;
+
+	//Inicializacion
+	edad = txtIdEdad.value;
+	opcion = document.getElementById('estadoCivil').value;
+
+	//Parseo
+	edad = parseInt(edad);
+
+	//Condicional
+	if(edad < 13 && opcion != "Soltero"){
 		alert("Es muy pequeño para NO ser soltero")
 	}
-
 
 }//FIN DE LA FUNCIÓN

@@ -1,9 +1,17 @@
 function mostrar()
 {
-	//tomo la edad  
-	let edad = txtIdEdad.value;
+	//Declaracion de variable
+	var edad;
+	
+	//Inicializacion
+	edad = txtIdEdad.value;
+
+	//Parseo
+	edad = parseInt(edad);
+
+	//Condicional
 	if(edad == 15){
-		alert("Niña bonita");
+		alert('Niña bonita');
 	}
 	
 
