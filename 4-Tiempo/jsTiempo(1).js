@@ -2,7 +2,7 @@ var miIntervalo ;
 
 function inicio()
 {	
-	alert("function inicio.");
+	alert('Bienvenido a la UTN FRA');
 	miIntervalo = setInterval(SegundosEnElAire, 3000);
 	
 }//FIN DE LA FUNCIÓN inicio

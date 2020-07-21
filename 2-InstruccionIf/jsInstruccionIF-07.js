@@ -10,7 +10,7 @@ function mostrar()
 
 	//Inicializacion
 	edad = txtIdEdad.value;
-	opcion = document.getElementById('estadoCivil').value;
+	opcion = estadoCivil.value;
 
 	//Parseo
 	edad = parseInt(edad);

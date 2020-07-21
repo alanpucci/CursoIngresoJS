@@ -4,17 +4,20 @@ var contador=0;
 function inicio()
 {
 	alert("function inicio.");
-	miIntervalo = setInterval(SegundosEnElAire, 2000);
+	miIntervalo = setInterval(SegundosEnElAire, 500);
 	
 }//FIN DE LA FUNCIÓN inicio
 
 function SegundosEnElAire() {
 
 	contador=contador +1;
-    alert("Bienvenido a la UTN FRA, cantidad ="+contador);
+	alert("Bienvenido a la UTN FRA, cantidad ="+contador);
+	
     if (contador==5)
     {
-    	clearInterval(miIntervalo);
+		clearInterval(miIntervalo);
+		contador = 0;
+		
     }
 }//FIN DE LA FUNCIÓN SegundosEnElAire
 

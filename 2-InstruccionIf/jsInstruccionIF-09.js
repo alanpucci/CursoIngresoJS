@@ -2,6 +2,7 @@ function mostrar()
 {
 	//Genero el número RANDOM entre 1 y 10 
 
-	alert((Math.random() * 10).toFixed(2));
+	// alert(Math.round(Math.random() * 10));
+	alert(Math.floor(Math.random() * 10) + 1);
 
 }

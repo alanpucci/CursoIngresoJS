@@ -3,7 +3,7 @@ var miIntervalo ;
 
 function inicio()
 {
-	alert("function inicio.");
+	alert("Bienvenido a la UTN FRA");
 	miIntervalo = setInterval(SegundosEnElAire, 3000);
 	
 }//FIN DE LA FUNCIÓN inicio
@@ -16,7 +16,7 @@ function SegundosEnElAire() {
 
 function fin()
 {
-	alert("function fin.");
+	alert("Fin de la funcion");
 	clearTimeout(miIntervalo);
 
 }//FIN DE LA FUNCIÓN fin

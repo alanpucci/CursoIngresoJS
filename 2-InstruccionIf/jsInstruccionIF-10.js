@@ -9,15 +9,32 @@ function mostrar()
 	var nota;
 
 	//Generacion de numero RANDOM entre 1 y 10
-	nota = (Math.random(nota) * 10).toFixed(2);
+	//nota = (Math.random(nota) * 10).toFixed(2);
+	nota = (Math.floor(Math.random() * 10) + 1);
 
 	//Condicional
-	if(nota > 8.99 && nota < 11){
-		alert('Su nota es: ' + nota + '. EXCELENTE!');
-	}else if(nota > 3.99 && nota < 9){
-		alert('Su nota es: ' + nota + '. APROBO!');
-	}else if(nota < 4){
-		alert('Su nota es: ' + nota + '. Vamos, la proxima se puede!');
-	}
+	// if(nota > 8.99 && nota < 11){
+	// 	alert('Su nota es: ' + nota + '. EXCELENTE!');
+	// }else if(nota > 3.99 && nota < 9){
+	// 	alert('Su nota es: ' + nota + '. APROBO!');
+	// }else if(nota < 4){
+	// 	alert('Su nota es: ' + nota + '. Vamos, la proxima se puede!');
+	// }
 	
+
+	if(nota > 8 && nota < 11){
+		alert(`Su nota es ${nota}. EXCELENTE`);
+	}
+	else{
+		if(nota > 3){
+			alert(`Su nota es ${nota}. APROBO`);
+		}
+		else{
+			alert(`Su nota es ${nota}. Vamos, la proxima se puede!`);
+		}
+	}
+
+	
+
+
 }//FIN DE LA FUNCIÓN
