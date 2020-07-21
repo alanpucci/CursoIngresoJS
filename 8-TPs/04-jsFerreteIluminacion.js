@@ -14,13 +14,15 @@ function CalcularPrecio ()
     var cantidad;
     var seleccion;
     var precio;
-    var mostrarPrecio;
+    var precioFinal;
+    var precioConImpuesto;
      
     //Inicializacion
     cantidad = txtIdCantidad.value;
     seleccion = Marca.value;
-    precio = 100;
-    mostrarPrecio = precio * cantidad;
+    precio = 35;
+    precioFinal = precio * cantidad;
+
     
 
     //Parseo
@@ -28,27 +30,27 @@ function CalcularPrecio ()
 
     //Condicionales
     if(cantidad > 5){
-        mostrarPrecio *= 0.5;
+        precioFinal *= 0.5;
     }
     else{
         if(cantidad == 5){
             
             if(seleccion == 'ArgentinaLuz'){
-                mostrarPrecio *= 0.6;
+                precioFinal *= 0.6;
             }
             else{
-                mostrarPrecio *= 0.7;
+                precioFinal *= 0.7;
             }
         }
         else{
 
-            if(cantidad == 5){
+            if(cantidad == 4){
 
                 if(seleccion == 'ArgentinaLuz' || seleccion == 'FelipeLamparas'){
-                    mostrarPrecio *= 0.75;
+                    precioFinal *= 0.75;
                 }
                 else{
-                    mostrarPrecio *= 0.8;
+                    precioFinal *= 0.8;
                 }
             }
             else{
@@ -56,14 +58,14 @@ function CalcularPrecio ()
                 if(cantidad == 3){
 
                     if(seleccion == 'ArgentinaLuz'){
-                        mostrarPrecio *= 0.85;
+                        precioFinal *= 0.85;
                     }
                     else{
                         if(seleccion == 'FelipeLamparas'){
-                            mostrarPrecio *= 0.9;
+                            precioFinal *= 0.9;
                         }
                         else{
-                            mostrarPrecio *= 0.95;
+                            precioFinal *= 0.95;
                         }
                     }
                 }
@@ -71,6 +73,12 @@ function CalcularPrecio ()
         }
     }
 
+    if(precioFinal >= 120){
+        precioConImpuesto = precioFinal * 0.1;
+        precioFinal *= 1.10
+        alert(`IIBB Usted pago ${precioFinal.toFixed(2)}, siendo ${precioConImpuesto.toFixed(2)} el impuesto que se pagó`);
+    }
 
-    txtIdprecioDescuento.value = mostrarPrecio;
+
+    txtIdprecioDescuento.value = precioFinal.toFixed(2);
 }
