@@ -11,18 +11,70 @@ Más de 10 intentos: “afortunado en el amor!!”.*/
 
 var numeroSecreto; 
 var contadorIntentos;
+var numeroIngresado;
+
+contadorIntentos = 0;
 
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-	 
-	
+	numeroSecreto = Math.floor((Math.random() * 100) + 1);
 
 }
 
 function verificar()
 {
+	numeroIngresado = txtIdNumero.value;
+	numeroIngresado = parseInt(numeroIngresado);
+
+	contadorIntentos++;
+
+	if(numeroIngresado == numeroSecreto){
+		
+		if(contadorIntentos == 1){
+			alert(`Usted es un psiquico`);
+		}
+		else{
+			if(contadorIntentos == 2){
+				alert(`Excelente percepcion`);
+			}
+			else{
+				if(contadorIntentos == 3){
+					alert(`Esto es suerte`);
+				}
+				else{
+					if(contadorIntentos == 4){
+						alert(`Excelente tecnica`);
+					}
+					else{
+						if(contadorIntentos == 5){
+							alert(`Usted esta en la media`);
+						}
+						else{
+							if(contaadorIntentos < 11){
+								alert(`Falta tecnica`);
+							}
+							else{
+								alert(`Afortunado en el amor`);
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	else{
+		if(numeroIngresado > numeroSecreto){
+			alert(`Te pasaste por ${numeroIngresado - numeroSecreto}`);
+		}
+		else{
+			alert(`Te faltaron ${numeroSecreto - numeroIngresado}`);
+		}
+	}
 	
+	txtIdIntentos.value = contadorIntentos;
 	
 
 }

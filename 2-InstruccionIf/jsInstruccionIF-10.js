@@ -22,7 +22,7 @@ function mostrar()
 	// }
 	
 
-	if(nota > 8 && nota < 11){
+	if(nota > 8){
 		alert(`Su nota es ${nota}. EXCELENTE`);
 	}
 	else{

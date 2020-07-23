@@ -12,59 +12,75 @@ function CalcularPrecio ()
 {
     //Declaracion
     var cantidad;
-    var seleccion;
+    var marcaElegida;
     var precio;
     var precioFinal;
-    var precioConImpuesto;
+    var impuesto;
+    var precioConDescuento;
      
     //Inicializacion
     cantidad = txtIdCantidad.value;
-    seleccion = Marca.value;
+    cantidad = parseInt(cantidad);
+    marcaElegida = Marca.value;
     precio = 35;
     precioFinal = precio * cantidad;
 
-    
-
-    //Parseo
-    cantidad = parseInt(cantidad);
 
     //Condicionales
-    if(cantidad > 5){
+    /*
+    if(cantidad > 5)
+    {
         precioFinal *= 0.5;
     }
-    else{
-        if(cantidad == 5){
+    else
+    {
+        
+        if(cantidad == 5)
+        {
             
-            if(seleccion == 'ArgentinaLuz'){
+            if(marcaElegida == 'ArgentinaLuz')
+            {
                 precioFinal *= 0.6;
             }
-            else{
+            else
+            {
                 precioFinal *= 0.7;
             }
         }
-        else{
+        else
+        {
 
-            if(cantidad == 4){
+            if(cantidad == 4)
+            {
 
-                if(seleccion == 'ArgentinaLuz' || seleccion == 'FelipeLamparas'){
+                if(marcaElegida == 'ArgentinaLuz' || marcaElegida == 'FelipeLamparas')
+                {
                     precioFinal *= 0.75;
                 }
-                else{
+                else
+                {
                     precioFinal *= 0.8;
                 }
             }
-            else{
+            else
+            {
                 
-                if(cantidad == 3){
+                if(cantidad == 3)
+                {
 
-                    if(seleccion == 'ArgentinaLuz'){
+                    if(marcaElegida == 'ArgentinaLuz')
+                    {
                         precioFinal *= 0.85;
                     }
-                    else{
-                        if(seleccion == 'FelipeLamparas'){
+                    else
+                    {
+                        
+                        if(marcaElegida == 'FelipeLamparas')
+                        {
                             precioFinal *= 0.9;
                         }
-                        else{
+                        else
+                        {
                             precioFinal *= 0.95;
                         }
                     }
@@ -73,12 +89,83 @@ function CalcularPrecio ()
         }
     }
 
-    if(precioFinal >= 120){
-        precioConImpuesto = precioFinal * 0.1;
-        precioFinal *= 1.10
-        alert(`IIBB Usted pago ${precioFinal.toFixed(2)}, siendo ${precioConImpuesto.toFixed(2)} el impuesto que se pagó`);
+
+    if(precioFinal > 120)
+    {
+        impuesto = precioFinal * 0.1;
+        precioFinal = precioFinal + impuesto;
+        alert(`IIBB Usted pago ${precioFinal.toFixed(2)}, siendo ${impuesto.toFixed(2)} el impuesto que se pagó`);
+    }
+    */
+
+
+
+    //Switch
+    switch(cantidad){
+        case 5:
+
+            switch(marcaElegida){
+                case 'ArgentinaLuz':
+                    precioFinal *= 0.6;
+                break;
+                default:
+                    precioFinal *= 0.7;
+            }
+            break;
+
+        case 4:
+            
+            switch(marcaElegida){
+                case 'ArgentinaLuz':
+                    precioFinal *= 0.75;
+                    break;
+                case 'FelipeLamparas':
+                    precioFinal *= 0.75;
+                    break;
+                default:
+                    precioFinal *= 0.8;
+                    break;
+            }
+            break;
+
+        case 3:
+
+            switch(marcaElegida){
+                case 'ArgentinaLuz':
+                    precioFinal *= 0.85;
+                    break;
+                case 'FelipeLamparas':
+                    precioFinal *= 0.9;
+                    break;
+                default:
+                    precioFinal *= 0.95;
+            }
+            break;
+
+        case 2:
+            break;
+        case 1:
+            break;
+        case 0:
+            break;
+        default:
+            precioFinal *= 0.5;
+            break;
+    }
+    
+    //Switch
+    switch(precioFinal){
+        case 120:
+            break;
+        default:
+            impuesto = precioFinal * 0.1;
+            precioFinal = precioFinal + impuesto;
+            alert('IIBB Usted pago ' + precioFinal.toFixed(2) + ', siendo ' + impuesto.toFixed(2) + ' el impuesto que se pago');
     }
 
 
     txtIdprecioDescuento.value = precioFinal.toFixed(2);
+    
+
+    
 }
