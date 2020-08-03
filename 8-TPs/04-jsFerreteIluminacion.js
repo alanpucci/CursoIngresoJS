@@ -87,7 +87,7 @@ function CalcularPrecio ()
                 }
             }
         }
-    }
+    }*/
 
 
     if(precioFinal > 120)
@@ -96,7 +96,7 @@ function CalcularPrecio ()
         precioFinal = precioFinal + impuesto;
         alert(`IIBB Usted pago ${precioFinal.toFixed(2)}, siendo ${impuesto.toFixed(2)} el impuesto que se pagó`);
     }
-    */
+    
 
 
 
@@ -117,9 +117,7 @@ function CalcularPrecio ()
             
             switch(marcaElegida){
                 case 'ArgentinaLuz':
-                    precioFinal *= 0.75;
-                    break;
-                case 'FelipeLamparas':
+                 case 'FelipeLamparas':
                     precioFinal *= 0.75;
                     break;
                 default:
@@ -143,24 +141,12 @@ function CalcularPrecio ()
             break;
 
         case 2:
-            break;
         case 1:
-            break;
         case 0:
             break;
         default:
             precioFinal *= 0.5;
             break;
-    }
-    
-    //Switch
-    switch(precioFinal){
-        case 120:
-            break;
-        default:
-            impuesto = precioFinal * 0.1;
-            precioFinal = precioFinal + impuesto;
-            alert('IIBB Usted pago ' + precioFinal.toFixed(2) + ', siendo ' + impuesto.toFixed(2) + ' el impuesto que se pago');
     }
 
 

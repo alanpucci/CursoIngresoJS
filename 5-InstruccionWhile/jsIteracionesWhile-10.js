@@ -15,15 +15,57 @@ function mostrar()
 	//declarar contadores y variables 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var sumaPositivos;
+	var sumaNegativos;
+	var cantidadPositivos;
+	var cantidadNegativos;
+	var cantidadCeros;
+	var cantidadPares;
 
-	respuesta="si";
+	sumaPositivos = 0;
+	sumaNegativos = 0;
+	cantidadPositivos = 0;
+	cantidadNegativos = 0;
+	cantidadCeros = 0;
+	cantidadPares = 0;
 
-	while(respuesta=="si")
+	respuesta=true;
+
+	while(respuesta)
 	{
-		
-		respuesta=prompt("desea continuar?");
+		numeroIngresado = prompt("Ingrese un numero");
+		numeroIngresado = parseInt(numeroIngresado);
+
+		if(numeroIngresado > 0){
+			sumaPositivos += numeroIngresado;
+			cantidadPositivos++;
+		}
+		else{
+			if(numeroIngresado < 0){
+				sumaNegativos += numeroIngresado;
+				cantidadNegativos++;
+			}
+			else{
+				if(numeroIngresado == 0){
+					cantidadCeros++;
+				}
+			}
+		}
+
+		if(numeroIngresado % 2 == 0){
+			cantidadPares++;
+		}
+
+		respuesta=confirm("Desea continuar?");
 	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+	document.write("la suma de negativos es : "+sumaNegativos + "<br>");
+	document.write("La suma de positivos es : " + sumaPositivos + "<br>");
+	document.write("La cantidad de numeros negativos es: " + cantidadNegativos + "<br>");
+	document.write("La cantidad de numeros positivos es: " + cantidadPositivos + "<br>");
+	document.write("La cantidad de ceros es: " + cantidadCeros + "<br>");
+	document.write("La cantidad de numeros pares es: " + cantidadPares + "<br>");
+	document.write("El promedio de los numeros positivos es: " + sumaPositivos / cantidadPositivos + "<br>");
+	document.write("El promedio de los numeros negativos es: " + sumaNegativos / cantidadNegativos + "<br>");
+	document.write("La diferencia entre numeros positivos y negativos es: " + (sumaPositivos + sumaNegativos) + "<br>");
 }//FIN DE LA FUNCIÓN
