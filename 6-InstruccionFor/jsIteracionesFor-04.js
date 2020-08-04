@@ -1,7 +1,10 @@
 function mostrar()
 {
-	alert("ok");
+	for( ; ; ){
+		var opcionIngresada = prompt('Ingrese algun mensaje');
+		if(opcionIngresada == "break"){
+			break;
+		}
+	}
 
-
-
-}//FIN DE LA FUNCIÓN
+}

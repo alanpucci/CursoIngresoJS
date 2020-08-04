@@ -1,7 +1,18 @@
 function mostrar()
 {
 
+	var numeroIngresado = parseInt(prompt("Ingrese un numero"));
+	var contador = 0;
 
-	alert("ok");
+	for(var i = 0; i <= numeroIngresado; i++){
 
-}//FIN DE LA FUNCIÓN
+		if(numeroIngresado % i == 0){
+			contador++;
+		}
+	}
+
+	if(contador == 2){
+		alert("Es primo");
+	}
+
+}
