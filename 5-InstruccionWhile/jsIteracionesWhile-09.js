@@ -24,11 +24,11 @@ function mostrar()
 		if(numeroIngresado > numeroMaximo){
 			numeroMaximo = numeroIngresado;
 		}
-		else{
-			if(numeroIngresado < numeroMinimo){
+		
+		if(numeroIngresado < numeroMinimo){
 				numeroMinimo = numeroIngresado;
-			}
 		}
+		
 		respuesta=confirm("desea continuar?");
 	}
 
